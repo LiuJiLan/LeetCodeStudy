@@ -1,0 +1,165 @@
+{\rtf1\ansi\ansicpg936\cocoartf2569
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 Monaco;\f1\fnil\fcharset134 PingFangSC-Regular;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs28 \cf0 //2020.09.11_#1_
+\f1 \'d7\'d4\'bc\'ba\'b5\'c4\'d6\'a4\'c3\'f7
+\f0 \
+\
+/**\
+ * Definition for singly-linked list.\
+ * struct ListNode \{\
+ *     int val;\
+ *     ListNode *next;\
+ *     ListNode(int x) : val(x), next(NULL) \{\}\
+ * \};\
+ */\
+\
+/*\
+
+\f1 \'ca\'fd\'d1\'a7\'d6\'a4\'c3\'f7\'a3\'ba
+\f0 \
+\
+
+\f1 \'c7\'b0\'cc\'e1\'a3\'ba\'bb\'b7\'b4\'e6\'d4\'da
+\f0 \
+\
+
+\f1 \'c9\'e8\'c6\'f0\'b5\'e3\'b5\'bd\'bb\'b7\'b5\'c4\'c1\'b4\'bd\'d3\'b5\'e3\'ce\'aa
+\f0 L\
+
+\f1 \'c9\'e8\'bb\'b7\'b5\'c4\'d6\'dc\'b3\'a4\'ce\'aa
+\f0 C\
+\
+
+\f1 \'b5\'b1
+\f0 fast
+\f1 \'d6\'b8\'d5\'eb\'b5\'bd\'b4\'ef\'bb\'b7\'b5\'c4\'cf\'ce\'bd\'d3\'b5\'e3\'ca\'b1\'a3\'ac
+\f0 S(fast) = L+C\
+
+\f1 \'b4\'cb\'ca\'b1
+\f0 S(slow) = (L+C)/2\
+
+\f1 \'bc\'b4\'a3\'ba
+\f0 slow
+\f1 \'d6\'b8\'d5\'eb\'d7\'df\'b3\'f6\'bb\'b7\'b5\'c4\'cf\'ce\'bd\'d3\'b5\'e3
+\f0  = (L+C)/2-L = (C-L)/2\
+\
+//
+\f1 \'d6\'a4\'c3\'f7
+\f0 :S(slow) <= L + C\
+
+\f1 \'b4\'cb\'ca\'b1\'d3\'d0\'bc\'ab\'b6\'cb\'c7\'e9\'bf\'f6\'a3\'ba
+\f0 L=0
+\f1 \'a3\'ac
+\f0 C=1\
+
+\f1 \'bc\'b4\'a3\'ba
+\f0 head->next == head 
+\f1 \'ce\'aa
+\f0 true\
+
+\f1 \'d4\'d9\'b4\'ce\'bc\'ab\'b6\'cb\'cc\'f5\'bc\'fe\'cf\'c2
+\f0 slow
+\f1 \'b5\'bd\'b4\'ef\'bb\'b7\'b5\'c4\'cf\'ce\'bd\'d3\'b5\'e3\'a3\'ac
+\f0 \
+
+\f1 \'bc\'b4\'a3\'ba
+\f0 S(slow) = L + C;\
+
+\f1 \'d3\'c9\'b4\'cb\'bf\'c9\'b5\'c3\'d2\'bb\'b0\'e3\'c7\'e9\'bf\'f6\'cf\'c2
+\f0 slow
+\f1 \'d6\'b8\'d5\'eb\'c3\'bb\'d3\'d0\'d7\'df\'cd\'ea\'bb\'b7\'a1\'a3
+\f0 \
+\
+
+\f1 \'d5\'e2\'ca\'b1\'a3\'ba\'bc\'d9\'c9\'e8
+\f0 slow
+\f1 \'d4\'d9\'d7\'df\'b3\'f6
+\f0 x
+\f1 \'d3\'eb
+\f0 fast
+\f1 \'cf\'e0\'d3\'f6\'a3\'ac
+\f0 \
+
+\f1 \'bc\'b4\'a3\'ba\'b4\'cb\'ca\'b1
+\f0 fast
+\f1 \'d3\'c9\'bb\'b7\'b5\'c4\'cf\'ce\'bd\'d3\'b5\'e3\'d4\'d9\'d7\'df\'b3\'f6
+\f0 2x\
+
+\f1 \'d3\'d0\'a3\'ba
+\f0 (C-L)/2 + x = 2x\
+
+\f1 \'bf\'c9\'b5\'c3\'cf\'e0\'d3\'f6\'b5\'e3\'ce\'aa\'bb\'b7\'b5\'c4\'cf\'ce\'bd\'d3\'b5\'e3\'d4\'d9\'d7\'df\'b3\'f6
+\f0 (C-L)\
+
+\f1 \'bc\'b4\'a3\'ba\'be\'e0\'c0\'eb\'bb\'bb\'b5\'c4\'cf\'ce\'bd\'d3\'b5\'e3
+\f0 (
+\f1 \'c1\'ed\'d2\'bb\'b6\'ce\'bb\'a1
+\f0 )
+\f1 \'ce\'aa
+\f0 L\
+\
+
+\f1 \'cb\'f9\'d2\'d4\'b5\'b1
+\f0 fast
+\f1 \'ba\'cd
+\f0 slow
+\f1 \'cf\'e0\'d3\'f6\'ca\'b1\'a3\'ac\'b5\'da\'c8\'fd\'b8\'f6\'d6\'b8\'d5\'eb\'b4\'d3
+\f0 head
+\f1 \'b3\'f6\'b7\'a2\'a3\'ac
+\f0 \
+
+\f1 \'b5\'b1
+\f0 slow
+\f1 \'bc\'cc\'d0\'f8\'c7\'b0\'bd\'f8\'b4\'ef\'b5\'bd\'bb\'b7\'b5\'c4\'cf\'ce\'bd\'d3\'b5\'e3\'ca\'b1
+\f0 (
+\f1 \'d3\'c9\'d3\'da
+\f0 S(
+\f1 \'b5\'da\'c8\'fd\'d6\'b8\'d5\'eb
+\f0 )=L
+\f1 \'a3\'ac\'bc\'b4\'a3\'ba
+\f0 S(
+\f1 \'b5\'da\'c8\'fd\'d6\'b8\'d5\'eb
+\f0 ) == S(slow)
+\f1 \'ca\'b1
+\f0 )
+\f1 \'a3\'ac
+\f0 \
+
+\f1 \'be\'cd\'ca\'c7\'b5\'da\'c8\'fd\'d6\'b8\'d5\'eb\'b5\'bd\'b4\'ef\'bb\'b7\'b5\'c4\'cf\'ce\'bd\'d3\'b5\'e3\'ca\'b1\'ba\'f2
+\f0 \
+\
+*/\
+\
+class Solution \{\
+public:\
+    ListNode *detectCycle(ListNode *head) \{\
+        if (head == NULL || head->next == NULL) \{\
+            return NULL;\
+        \}\
+        else if (head == head->next) \{\
+            return head;\
+        \}\
+        \
+        ListNode * fast = head, * slow = head;\
+        while(fast != NULL && fast->next != NULL) \{\
+            fast = fast->next->next;\
+            slow = slow->next;\
+\
+            if (fast == slow) \{\
+                ListNode * thirdPoint = head;\
+                while (thirdPoint != slow) \{\
+                    slow = slow->next;\
+                    thirdPoint = thirdPoint->next;\
+                \}\
+                return thirdPoint;\
+            \}\
+        \}\
+        \
+        return NULL;\
+    \}\
+\};}
